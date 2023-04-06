@@ -1,0 +1,21 @@
+Example
+Running a Python HTTPS server with TLS/SSL
+'
+import http.server
+import ssl
+
+httpd = http.server.HTTPServer(('localhost', 443),
+http.server.SimpleHTTPRequestHandler)
+httpd.socket = ssl.wrap_socket (httpd.socket,
+certfile='./certificate.pem', server_side=True, ssl_version=ssl.PROTOCOL_TLS
+httpd.serve_forever()
+'
+#Client
+'
+import requests
+res = requests.get('https://localhost:443')
+
+print(res)
+'
+
+<Response [200]>

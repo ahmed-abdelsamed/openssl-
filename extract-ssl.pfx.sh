@@ -1,3 +1,6 @@
+### Must be update openssl
+
+
 #Execute the following command to export Private Key file:
 
 openssl pkcs12 -in [yourfile.pfx] -nocerts -out [keyfile-encrypted.key]

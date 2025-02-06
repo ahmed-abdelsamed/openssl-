@@ -1,6 +1,9 @@
 #1. Extract the Private Key
 
-openssl pkcs12 -in yourfile.pfx -nocerts -out privatekey.pem -nodes
+openssl pkcs12 -in yourfile.pfx -nocerts -out en_privatekey.pem -nodes
+
+# Decrept Key 
+openssl rsa -in en_privatekey.pem -out privatekey.pem 
 
 #2. Extract the Certificate
 openssl pkcs12 -in yourfile.pfx -clcerts -nokeys -out certificate.pem

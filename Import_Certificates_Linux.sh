@@ -18,7 +18,7 @@ certutil -D -d . -n "CA Root"
 certutil -D -d . -n "CA SUB"
 ############
 ## Update certificate on Java
-keytool -import -trustcacerts -keystore /etc/java/java-11-openjdk/java-11-openjdk-11.0.14.1.1-6.el9.x86_64/lib/security/cacerts -storepass changeit -noprompt -alias nafath-user-new  -file /var/liferay/liferay-dxp/"mcit-sb.crt"
+keytool -import -trustcacerts -keystore /etc/java/java-11-openjdk/java-11-openjdk-11.0.14.1.1-6.el9.x86_64/lib/security/cacerts -storepass changeit -noprompt -alias nafath-user-new  -file /var/liferay/liferay-dxp/"sb.crt"
 
 
 

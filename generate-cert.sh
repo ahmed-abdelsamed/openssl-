@@ -1,3 +1,7 @@
+#To modify the script for different use cases:
+#For wildcard certificates:
+## ./generate_certs.sh "*.linkdev.local" 365
+
 #!/bin/bash
 
 # Certificate Generator Script

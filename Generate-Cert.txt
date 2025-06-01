@@ -1,4 +1,4 @@
-Here's a comprehensive bash script to generate SSL certificates and keys using OpenSSL, with best practices for security and flexibility:
+#Here's a comprehensive bash script to generate SSL certificates and keys using OpenSSL, with best practices for security and flexibility:
 
 ```bash
 #!/bin/bash
@@ -96,7 +96,7 @@ echo -e "Files saved to: $OUTPUT_DIR/"
 echo -e "\nGenerated files:"
 ls -lh "$OUTPUT_DIR"/
 ```
-
+############################################################ End of Script #################################
 ## Key Features:
 
 1. **Customizable Parameters**:

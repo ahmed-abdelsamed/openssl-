@@ -100,3 +100,24 @@ curl -v https://www.web-server.linkdev.com
 # < 
 # < Hello, this is a secure web server! 
 ########################################################################
+## Renew certificates
+./easyrsa renew web-server
+
+# Revoke certificates
+./easyrsa revoke-renewed  web-server
+# Type the word 'yes' to continue, or any other input to abort.
+./easyrsa gen-crl
+
+## httpd read new certifcate and invoke old one
+## copy crl to web-server
+scp pki/crl.pem root@web-server:/etc/pki/tls/crl.pem
+vi /etc/httpd/conf.d/ssl.conf
+# SSLCARevocationFile /etc/pki/tls/crl.pem
+systemctl restart httpd
+
+curl -v --crlft /etc/pki/tls/crl.pem  http://www.web-server.linkdev.com/
+# * TLSv1.3 (OUT), TLS handshake, Client hello (1):
+# * TLSv1.3 (IN), TLS alert, Alert (2):
+# * SSL certificate problem: certificate has been revoked    
+########################################################################   
+

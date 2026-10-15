@@ -3,7 +3,7 @@
 
 #Execute the following command to export Private Key file:
 
-openssl pkcs12 -in [yourfile.pfx] -nocerts -out [keyfile-encrypted.key]
+openssl pkcs12 -in [yourfile.pfx] -nocerts -out [keyfile-encrypted.key] -legacy
 
 #Then remove the passphrase from the Private Key
 
